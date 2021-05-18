@@ -9,7 +9,7 @@ resource "aws_instance" "webserver" {
  provisioner "remote-exec" {
  	   inline = [
       	"sudo yum -y install httpd && sudo systemctl start httpd",
-      		"echo '<h1><center>My Website via Terraform Version 1</center></h1>' > index.html",
+      		"echo '<h1><center>Welcome to my website. Terraform Version 1</center></h1>' > index.html",
       "sudo mv index.html /var/www/html/"
     ]
     	connection {
